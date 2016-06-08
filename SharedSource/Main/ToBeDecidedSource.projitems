@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>846d34c8-e537-4dc7-b646-cff649ce42e4</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>ToBeDecided</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Actions\IAction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Actions\MovementAction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Components\EnemyBehaviour.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Components\GameComponent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Components\GameSceneBehaviour.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Components\InputController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Components\MenuInputController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Components\PlayerBehaviourComponent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Components\StatComponent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Components\Weapon.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Components\WeaponBehaviour.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entitys\Enemy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entitys\Gameobject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entitys\IEnemy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entitys\Ork.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entitys\Player.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Game.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MapChangeTrigger.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Map\Map.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Map\MapLoader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MyScene.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scenes\GameScene.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scenes\TitleScene.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Spawner\Spawner.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WaveContent.cs" />
+  </ItemGroup>
+</Project>
