@@ -10,30 +10,19 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
-
-
+using WaveEngine.Framework;
 
 using Components;
-using Entitys;
+
 namespace Entitys {
-	public class Player : Gameobject, Gameobject {
+	public class Player : GameObject {
 
-		public Components.GameComponent m_GameComponent;
-		public Components.PlayerBehaviourComponent m_PlayerBehaviourComponent;
-		public Components.StatComponent m_StatComponent;
-
-
-
-		~Player(){
-
-		}
+		//public Components.GameComponent m_GameComponent;
+		public PlayerBehaviourComponent playerBehaviourComponent;
+		public StatComponent statComponent;
 
 		public Player(){
-
-		}
-
-		public void finalize(){
-
+            thisEntity = new Entity();
 		}
 
 	}//end Player

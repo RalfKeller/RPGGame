@@ -10,45 +10,33 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
-
-
+using WaveEngine.Framework;
+using Scenes;
 
 namespace Entitys {
-	public class Gameobject {
+	public class GameObject : BaseDecorator {
 
-		private Queue eventQueue;
-		private GameScene gameScene;
-		private bool isAlive;
-		public event onDeath;
+		protected GameScene gameScene;
+        protected Entity thisEntity;
 
-		public Gameobject(){
+        public bool isAlive
+        {
+            get; private set;
+        }
 
+        public delegate void OnDeathHandler();
+		public event OnDeathHandler onDeathEvent;
+
+		public GameObject(){
 		}
 
-		~Gameobject(){
-
-		}
-
-		public IAction getNextAction(){
-
-			return null;
-		}
-
-		public bool isAlive(){
-
-			return false;
-		}
 
 		private void onDeath(){
 
 		}
-
-		/// 
-		/// <param name="damage"></param>
+        
 		public void recieveDamange(float damage){
 
 		}
-
-	}//end Gameobject
-
-}//end namespace Entitys
+	}
+}

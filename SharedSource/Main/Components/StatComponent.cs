@@ -10,28 +10,17 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
-
-
+using WaveEngine.Framework;
 
 namespace Components {
-	public class StatComponent {
+	public class StatComponent : Component {
 
 		private int currentHealth;
 		private int maxHealth;
 		private int speed;
 		private int strength;
 
-
-
-		~StatComponent(){
-
-		}
-
 		public StatComponent(){
-
-		}
-
-		public void finalize(){
 
 		}
 

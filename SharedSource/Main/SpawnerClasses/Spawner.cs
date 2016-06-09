@@ -10,28 +10,46 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
+using Entitys;
+using MapClasses;
 
+namespace SpawnerClasses {
+	public class Spawner  {
 
+		IEnemy getType()
+        {
+            return null;
+        }
 
-namespace Spawner {
-	public interface Spawner  {
-
-		IEnemy getType();
-
-		bool isTypeOf<E>();
+		bool isTypeOf<E>()
+        {
+            return false;
+        }
 
 		/// 
 		/// <param name="anzahl"></param>
 		/// <param name="level"></param>
-		void setBase<E>(int anzahl, int level);
+		void setBase<E>(int anzahl, int level)
+        {
+            
+        }
 
 		/// 
 		/// <param name="map"></param>
-		void setMap(Map map);
+		void setMap(Map map)
+        {
 
-		void setType<E>();
+        }
 
-		void spawn();
+		void setType<E>()
+        {
+
+        }
+
+		void spawn()
+        {
+
+        }
 	}//end Spawner
 
 }//end namespace Spawner

@@ -10,26 +10,19 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
-
-
+using WaveEngine.Framework;
 
 namespace Components {
-	public class PlayerBehaviourComponent {
-
-
-
-		~PlayerBehaviourComponent(){
-
-		}
+	public class PlayerBehaviourComponent : Behavior {
 
 		public PlayerBehaviourComponent(){
 
 		}
 
-		public void finalize(){
-
-		}
-
-	}//end PlayerBehaviourComponent
+        protected override void Update(TimeSpan gameTime)
+        {
+            throw new NotImplementedException();
+        }
+    }//end PlayerBehaviourComponent
 
 }//end namespace Components

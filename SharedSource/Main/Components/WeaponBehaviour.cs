@@ -11,10 +11,8 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 
-
-
 namespace Components {
-	public interface WeaponBehaviour  {
+	public interface WeaponBehaviour {
 
 	}//end WeaponBehaviour
 

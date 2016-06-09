@@ -21,8 +21,4 @@ public class MapChangeTrigger {
 
 	}
 
-	~MapChangeTrigger(){
-
-	}
-
 }//end MapChangeTrigger

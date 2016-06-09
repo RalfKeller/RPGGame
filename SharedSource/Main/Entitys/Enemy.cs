@@ -14,25 +14,18 @@ using System.IO;
 
 
 using Components;
+using WaveEngine.Framework;
 using Entitys;
 namespace Entitys {
-	public class Enemy : Gameobject, Gameobject {
+	public abstract class Enemy : GameObject, IEnemy {
 
-		public Components.GameComponent m_GameComponent;
-		public Components.StatComponent m_StatComponent;
-
-
-
-		~Enemy(){
-
-		}
+        private StatComponent statComponent;
 
 		public Enemy(){
-
+            thisEntity = new Entity();
+            thisEntity.AddComponent(statComponent);
 		}
 
-		/// 
-		/// <param name="statComponent">statComponent</param>
 		public Enemy(StatComponent statComponent){
 
 		}

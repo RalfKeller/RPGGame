@@ -21,10 +21,6 @@ namespace Components {
 
 		}
 
-		~MenuInputController(){
-
-		}
-
 	}//end MenuInputController
 
 }//end namespace Components

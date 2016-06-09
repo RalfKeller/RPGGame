@@ -13,8 +13,8 @@ using System.IO;
 
 
 
-using Map;
-namespace Map {
+using MapClasses;
+namespace MapClasses {
 	public class MapLoader {
 
 		public Map m_Map;

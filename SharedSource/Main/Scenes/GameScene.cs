@@ -15,33 +15,30 @@ using System.IO;
 
 using Components;
 using Entitys;
-using Map;
+using MapClasses;
+using WaveEngine.Framework;
+
 namespace Scenes {
-	public class GameScene {
+	public class GameScene : Scene {
 
-		public Components.GameSceneBehaviour m_GameSceneBehaviour;
+		public GameSceneBehaviour gameSceneBehaviour;
 
-
-
-		~GameScene(){
-
-		}
 
 		public GameScene(){
 
 		}
 
-		/// 
 		/// <param name="map"></param>
 		/// <param name="player">player</param>
 		public GameScene(Map map, Player player){
 
 		}
 
-		public void finalize(){
+        protected override void CreateScene()
+        {
+            throw new NotImplementedException();
+        }
 
-		}
-
-	}//end GameScene
+    }//end GameScene
 
 }//end namespace Scenes

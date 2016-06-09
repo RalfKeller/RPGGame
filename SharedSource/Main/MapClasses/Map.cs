@@ -14,16 +14,13 @@ using System.IO;
 
 
 using Scenes;
-namespace Map {
+using SpawnerClasses;
+using WaveEngine.Common.Math;
+
+namespace MapClasses {
 	public class Map {
 
-		public Scenes.GameScene m_GameScene;
-
-
-
-		~Map(){
-
-		}
+		public GameScene gameScene;
 
 		public Map(){
 

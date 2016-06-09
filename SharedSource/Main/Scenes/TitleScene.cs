@@ -10,26 +10,19 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
-
-
+using WaveEngine.Framework;
 
 namespace Scenes {
-	public class TitleScene {
-
-
-
-		~TitleScene(){
-
-		}
+	public class TitleScene : Scene {
 
 		public TitleScene(){
 
 		}
 
-		public void finalize(){
-
-		}
-
-	}//end TitleScene
+        protected override void CreateScene()
+        {
+            throw new NotImplementedException();
+        }
+    }//end TitleScene
 
 }//end namespace Scenes

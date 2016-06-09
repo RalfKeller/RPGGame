@@ -16,12 +16,6 @@ using System.IO;
 using Entitys;
 public class GameHandler {
 
-
-
-	~GameHandler(){
-
-	}
-
 	public GameHandler(){
 
 	}
@@ -29,10 +23,6 @@ public class GameHandler {
 	/// 
 	/// <param name="enemy">enemy</param>
 	public void announceDeath(IEnemy enemy){
-
-	}
-
-	public void finalize(){
 
 	}
 

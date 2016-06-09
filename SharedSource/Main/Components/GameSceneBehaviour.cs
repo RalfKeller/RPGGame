@@ -10,27 +10,25 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
-
-
+using WaveEngine.Framework;
+using Entitys;
+using MapClasses;
 
 namespace Components {
-	public class GameSceneBehaviour {
+	public class GameSceneBehaviour : Behavior {
 
 		public GameSceneBehaviour(){
 
 		}
 
-		~GameSceneBehaviour(){
-
-		}
-
-		/// 
-		/// <param name="gameObjects"></param>
-		/// <param name="map"></param>
 		public GameSceneBehaviour(List<GameObject> gameObjects, Map map){
 
 		}
 
-	}//end GameSceneBehaviour
+        protected override void Update(TimeSpan gameTime)
+        {
+            throw new NotImplementedException();
+        }
+    }//end GameSceneBehaviour
 
 }//end namespace Components

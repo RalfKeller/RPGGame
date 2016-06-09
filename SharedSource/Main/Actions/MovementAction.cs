@@ -14,14 +14,13 @@ using System.IO;
 
 
 using Actions;
+using Entitys;
+using Scenes;
+
 namespace Actions {
 	public class MovementAction : IAction {
 
 		public MovementAction(){
-
-		}
-
-		~MovementAction(){
 
 		}
 
@@ -31,11 +30,10 @@ namespace Actions {
 
 		}
 
-		/// 
-		/// <param name="gameScene"></param>
-		public void execute(GameScene gameScene){
-
-		}
+        public void execute(GameScene gameScene)
+        {
+            throw new NotImplementedException();
+        }
 
 	}//end MovementAction
 
