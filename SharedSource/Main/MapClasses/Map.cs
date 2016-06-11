@@ -16,25 +16,21 @@ using System.IO;
 using Scenes;
 using SpawnerClasses;
 using WaveEngine.Common.Math;
+using TiledSharp;
 
 namespace MapClasses {
 	public class Map {
 
 		public GameScene gameScene;
+        private TmxMap tmxMap;
 
-		public Map(){
-
+		public Map(TmxMap tmxMap) {
+            this.tmxMap = tmxMap;
 		}
 
-		public void finalize(){
-
-		}
-
-		/// 
 		/// <param name="schwierigkeit">schwierigkeit</param>
 		public List<Spawner> getSpawner(int schwierigkeit){
-
-			return null;
+            return null;
 		}
 
 		/// 

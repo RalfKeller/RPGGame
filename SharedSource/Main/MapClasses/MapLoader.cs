@@ -7,25 +7,15 @@
 ///////////////////////////////////////////////////////////
 
 using System;
-using System.Collections.Generic;
-using System.Text;
-using System.IO;
+using TiledSharp;
 
-
-
-using MapClasses;
 namespace MapClasses {
 	public class MapLoader {
 
-		public Map m_Map;
+        //public Map m_Map;
+        private static MapLoader instance;
 
-
-
-		~MapLoader(){
-
-		}
-
-		public MapLoader(){
+		private MapLoader(){
 
 		}
 
@@ -34,15 +24,18 @@ namespace MapClasses {
 		}
 
 		public static MapLoader getInstance(){
-
-			return null;
+            if (instance == null)
+                instance = new MapLoader();
+            return instance;
 		}
 
 		/// 
 		/// <param name="path">path</param>
 		public Map load(String path){
+            TmxMap tmxMap = new TmxMap(path);
 
-			return null;
+            Map map = new Map(tmxMap);
+            return map;
 		}
 
 	}//end MapLoader
