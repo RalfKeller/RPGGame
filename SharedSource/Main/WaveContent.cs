@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 11.06.2016 11:42:58
+// File generated on 15.06.2016 10:55:37
 namespace ToBeDecided
 {
     using System;
@@ -16,6 +16,13 @@ namespace ToBeDecided
     
     public sealed class WaveContent
     {
+        
+        public sealed class Assets
+        {
+            
+            /// <summary> Path to Content/Assets/TitleBackground.jpg </summary>
+            public const string TitleBackground_jpg = "Content/Assets/TitleBackground.jpg";
+        }
         
         public sealed class Scenes
         {

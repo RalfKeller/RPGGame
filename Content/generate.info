@@ -1,0 +1,12 @@
+﻿<GenerateInfo xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEditor.Exporter.Model">
+  <files xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+    <d2p1:KeyValueOfstringFileHashesH8kexHFU>
+      <d2p1:Key>C:/Users/Ralf Keller/Desktop/Wave/ToBeDecided/Content/TitleBackground.jpg#WaveEditor.Exporter.Exporters.TextureExporter</d2p1:Key>
+      <d2p1:Value>
+        <FileHash>57effd6377b4ecfd3c5d4a57728c52e7</FileHash>
+        <WinfoHash>0a97d5b6ee353dd2b3e5a87a58a798b2</WinfoHash>
+      </d2p1:Value>
+    </d2p1:KeyValueOfstringFileHashesH8kexHFU>
+  </files>
+  <id>BFEBFBFFFFFFFFFF</id>
+</GenerateInfo>

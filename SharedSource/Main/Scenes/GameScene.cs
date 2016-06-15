@@ -17,6 +17,8 @@ using Components;
 using Entitys;
 using MapClasses;
 using WaveEngine.Framework;
+using WaveEngine.Framework.Graphics;
+using WaveEngine.Components.Cameras;
 
 namespace Scenes {
 	public class GameScene : Scene {
@@ -36,7 +38,8 @@ namespace Scenes {
 
         protected override void CreateScene()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            EntityManager.Add(new FixedCamera2D("Camera"));
         }
 
     }//end GameScene

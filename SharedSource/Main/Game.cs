@@ -1,4 +1,5 @@
 #region Using Statements
+using Scenes;
 using System;
 using WaveEngine.Common;
 using WaveEngine.Common.Graphics;
@@ -14,7 +15,7 @@ namespace ToBeDecided
         {
             base.Initialize(application);
 
-			ScreenContext screenContext = new ScreenContext(new MyScene());	
+			ScreenContext screenContext = new ScreenContext(new TitleScene());	
 			WaveServices.ScreenContextManager.To(screenContext);
         }
     }
