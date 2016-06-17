@@ -17,9 +17,11 @@ using Scenes;
 using SpawnerClasses;
 using WaveEngine.Common.Math;
 using TiledSharp;
+using WaveEngine.Framework;
+using WaveEngine.Framework.Graphics;
 
 namespace MapClasses {
-	public class Map {
+	public class Map : BaseDecorator {
 
 		public GameScene gameScene;
         private TmxMap tmxMap;
@@ -35,7 +37,7 @@ namespace MapClasses {
 
 		/// 
 		/// <param name="rectangle">rectangle</param>
-		public bool requestMovement(Rectangle rectangle){
+		public bool requestMovement(Transform2D transform){
 
 			return false;
 		}

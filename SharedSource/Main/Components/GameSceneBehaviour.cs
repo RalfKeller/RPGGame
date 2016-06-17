@@ -15,15 +15,25 @@ using Entitys;
 using MapClasses;
 
 namespace Components {
-	public class GameSceneBehaviour : Behavior {
+	public class GameSceneBehaviour : SceneBehavior {
+
+        private Player player;
+        private List<GameObject> gameObjects;
+        private Map map;
 
 		public GameSceneBehaviour(){
 
 		}
 
 		public GameSceneBehaviour(List<GameObject> gameObjects, Map map){
-
+            this.gameObjects = gameObjects;
+            this.map = map;
 		}
+
+        protected override void ResolveDependencies()
+        {
+            player = Scene.EntityManager.Find<Player>("Player");
+        }
 
         protected override void Update(TimeSpan gameTime)
         {

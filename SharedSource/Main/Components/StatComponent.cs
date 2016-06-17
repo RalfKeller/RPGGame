@@ -15,12 +15,12 @@ using WaveEngine.Framework;
 namespace Components {
 	public class StatComponent : Component {
 
-		private int currentHealth;
-		private int maxHealth;
-		private int speed;
-		private int strength;
+		public int currentHealth { get; private set; }
+        public int maxHealth { get; private set; }
+        public int speed { get; private set; }
+        public int strength { get; private set; }
 
-		public StatComponent(){
+        public StatComponent(){
 
 		}
 

@@ -19,27 +19,53 @@ using MapClasses;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
 using WaveEngine.Components.Cameras;
+using WaveEngine.Framework.Physics2D;
 
 namespace Scenes {
 	public class GameScene : Scene {
 
-		public GameSceneBehaviour gameSceneBehaviour;
+		public GameSceneBehaviour gameSceneBehaviour { get; private set; }
+        public List<GameObject> gameObjects { get; private set; }
+        private Map map;
 
 
 		public GameScene(){
 
 		}
 
-		/// <param name="map"></param>
-		/// <param name="player">player</param>
+		/// <param name="map">Die Map, die für diese Scene verwendet werden soll</param>
+		/// <param name="player">Der Player, der für diese Scene verwendet werden soll</param>
 		public GameScene(Map map, Player player){
+            this.map = map;
 
+            gameSceneBehaviour = new GameSceneBehaviour();
+
+            //Noch nicht sicher, ob "PostUpdate" oder "PreUpdate" besser für uns ist
+            AddSceneBehavior(gameSceneBehaviour, SceneBehavior.Order.PostUpdate);
+
+            gameObjects = new List<GameObject>();
+
+            EntityManager.Add(map);
+            EntityManager.Add(player);
 		}
 
         protected override void CreateScene()
         {
             //throw new NotImplementedException();
             EntityManager.Add(new FixedCamera2D("Camera"));
+        }
+
+        public bool isFree(Collider2D collider)
+        {
+            if (map.requestMovement(collider.Transform2D) == false)
+                return false;
+            foreach (GameObject gameObject in gameObjects)
+            {
+                if (collider.Intersects(gameObject.collider))
+                    return false;
+            }
+
+            return true;
         }
 
     }//end GameScene

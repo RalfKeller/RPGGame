@@ -11,17 +11,63 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 using WaveEngine.Framework;
+using WaveEngine.Framework.Services;
+using WaveEngine.Common.Input;
+using Scenes;
+using WaveEngine.Framework.Physics2D;
+using WaveEngine.Framework.Graphics;
 
 namespace Components {
 	public class PlayerBehaviourComponent : Behavior {
 
-		public PlayerBehaviourComponent(){
+        [RequiredComponent]
+        StatComponent stats;
 
+        [RequiredComponent]
+        Collider2D collider;
+
+        [RequiredComponent]
+        Transform2D transform;
+
+        private GameScene scene;
+		public PlayerBehaviourComponent(GameScene scene){
+            this.scene = scene;
 		}
 
         protected override void Update(TimeSpan gameTime)
         {
-            throw new NotImplementedException();
+            KeyboardState keyboardState = WaveServices.Input.KeyboardState;
+
+            float oldX = transform.X;
+            float oldY = transform.Y;
+
+            if(keyboardState.IsKeyPressed(Keys.W))
+            {
+                transform.Y -= stats.speed * gameTime.Milliseconds;
+                if (!scene.isFree(collider))
+                    transform.Y = oldY;
+            }
+
+            if (keyboardState.IsKeyPressed(Keys.A))
+            {
+                transform.X -= stats.speed * gameTime.Milliseconds;
+                if (!scene.isFree(collider))
+                    transform.X = oldX;
+            }
+
+            if (keyboardState.IsKeyPressed(Keys.S))
+            {
+                transform.Y += stats.speed * gameTime.Milliseconds;
+                if (!scene.isFree(collider))
+                    transform.Y = oldY;
+            }
+
+            if (keyboardState.IsKeyPressed(Keys.D))
+            {
+                transform.X += stats.speed * gameTime.Milliseconds;
+                if (!scene.isFree(collider))
+                    transform.X = oldX;
+            }
         }
     }//end PlayerBehaviourComponent
 

@@ -13,16 +13,25 @@ using System.IO;
 using WaveEngine.Framework;
 
 using Components;
+using WaveEngine.Framework.Graphics;
+using WaveEngine.Framework.Physics2D;
 
 namespace Entitys {
 	public class Player : GameObject {
 
-		//public Components.GameComponent m_GameComponent;
-		public PlayerBehaviourComponent playerBehaviourComponent;
-		public StatComponent statComponent;
+		public PlayerBehaviourComponent playerBehaviourComponent { get; private set; }
+        public StatComponent statComponent { get; private set; }
 
 		public Player(){
-            thisEntity = new Entity();
+            playerBehaviourComponent = new PlayerBehaviourComponent(gameScene);
+            collider = new RectangleCollider2D();
+            statComponent = new StatComponent();
+
+            thisEntity = new Entity("Player")
+                .AddComponent(new Transform2D())
+                .AddComponent(playerBehaviourComponent)
+                .AddComponent(collider)
+                .AddComponent(statComponent);
 		}
 
 	}//end Player

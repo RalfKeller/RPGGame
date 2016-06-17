@@ -12,12 +12,15 @@ using System.Text;
 using System.IO;
 using WaveEngine.Framework;
 using Scenes;
+using WaveEngine.Framework.Physics2D;
 
 namespace Entitys {
 	public class GameObject : BaseDecorator {
 
 		protected GameScene gameScene;
         protected Entity thisEntity;
+
+        public Collider2D collider { get; protected set; }
 
         public bool isAlive
         {
