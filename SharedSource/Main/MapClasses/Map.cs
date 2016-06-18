@@ -23,11 +23,53 @@ using WaveEngine.Framework.Graphics;
 namespace MapClasses {
 	public class Map : BaseDecorator {
 
+        public enum Difficulty
+        {
+            Jede = 0,
+            Leicht = 1,
+            Mittel = 2,
+            Schwer = 3,
+
+        }
+
 		public GameScene gameScene;
         private TmxMap tmxMap;
 
+        private Dictionary<int, List<Spawner>> difficultyToSpawnerList;
+
 		public Map(TmxMap tmxMap) {
             this.tmxMap = tmxMap;
+
+            difficultyToSpawnerList.Add(0, new List<Spawner>());
+            difficultyToSpawnerList.Add(1, new List<Spawner>());
+            difficultyToSpawnerList.Add(2, new List<Spawner>());
+
+            foreach (TmxObjectGroup objectGroup in tmxMap.ObjectGroups)
+            {
+                if(objectGroup.Name == "Spawner")
+                {
+                    foreach (TmxObject tmxObject in objectGroup.Objects)
+                    {
+                        bool inEasy;
+                        bool inMedium;
+                        bool inHard;
+
+                        string inEasyString = "false";
+                        string inMediumString = "false";
+                        string inHardString = "false";
+
+                        tmxObject.Properties.TryGetValue("inEasy", out inEasyString);
+                        tmxObject.Properties.TryGetValue("inMedium", out inMediumString);
+                        tmxObject.Properties.TryGetValue("inHard", out inHardString);
+
+                        inEasy      = Convert.ToBoolean(inEasyString);
+                        inMedium    = Convert.ToBoolean(inMediumString);
+                        inHard      = Convert.ToBoolean(inHardString);
+
+                       
+                    }
+                }
+            }
 		}
 
 		/// <param name="schwierigkeit">schwierigkeit</param>
