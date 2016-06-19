@@ -30,9 +30,10 @@ namespace Entitys {
             playerBehaviourComponent = new PlayerBehaviourComponent(scene);
             collider = new RectangleCollider2D();
             statComponent = StatComponent.PlayerLevel1;
+            transform = new Transform2D() { X = 50, Y = 50, DrawOrder = 0 };
 
             Entity = new Entity("Player")
-                .AddComponent(new Transform2D() { X = 50, Y = 50, DrawOrder = 0})
+                .AddComponent(transform)
                 .AddComponent(new SpriteAtlas(WaveContent.Assets.SpriteSheet_spritesheet))
                 .AddComponent(new SpriteAtlasRenderer())
                 .AddComponent(new Animation2D())

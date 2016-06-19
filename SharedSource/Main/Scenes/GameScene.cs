@@ -20,6 +20,8 @@ using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
 using WaveEngine.Components.Cameras;
 using WaveEngine.Framework.Physics2D;
+using ToBeDecided;
+using System.Drawing;
 
 namespace Scenes {
 	public class GameScene : Scene {
@@ -50,7 +52,9 @@ namespace Scenes {
         protected override void CreateScene()
         {
             //throw new NotImplementedException();
-            EntityManager.Add(new FixedCamera2D("Camera"));
+            FixedCamera2D camera = new FixedCamera2D("Camera");
+            camera.Entity.AddComponent(new CameraTrackBehaviour(player, new Rectangle(0, 0, map.getWidth(), map.getHeight())));
+            EntityManager.Add(camera);
 
             EntityManager.Add(map);
             EntityManager.Add(player);

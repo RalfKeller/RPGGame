@@ -13,6 +13,7 @@ using System.IO;
 using WaveEngine.Framework;
 using Scenes;
 using WaveEngine.Framework.Physics2D;
+using WaveEngine.Framework.Graphics;
 
 namespace Entitys {
 	public class GameObject : BaseDecorator {
@@ -21,6 +22,7 @@ namespace Entitys {
         protected Entity thisEntity;
 
         public Collider2D collider { get; protected set; }
+        public Transform2D transform { get; protected set; }
 
         public bool isAlive
         {

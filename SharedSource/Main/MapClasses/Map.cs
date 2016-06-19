@@ -141,6 +141,16 @@ namespace MapClasses
             return true;
         }
 
+        public int getWidth()
+        {
+            return tmxMap.Width * tmxMap.TileWidth;
+        }
+
+        public int getHeight()
+        {
+            return tmxMap.Height * tmxMap.TileHeight;
+        }
+
     }//end Map
 
 }//end namespace Map
