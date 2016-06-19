@@ -16,6 +16,9 @@ using WaveEngine.Common.Input;
 using Scenes;
 using WaveEngine.Framework.Physics2D;
 using WaveEngine.Framework.Graphics;
+using WaveEngine.Components.Graphics2D;
+using WaveEngine.Components.Animation;
+using ToBeDecided;
 
 namespace Components {
 	public class PlayerBehaviourComponent : Behavior {
@@ -29,7 +32,37 @@ namespace Components {
         [RequiredComponent]
         Transform2D transform;
 
+        [RequiredComponent]
+        Animation2D anim2D; 
+
+        [RequiredComponent]
+        SpriteAtlas sprite;
+
+        [RequiredComponent]
+        SpriteAtlasRenderer spriteRenderer;
+
+        public const float SPEED_MODIFIER = 0.08f;
+
+
         private GameScene scene;
+
+        private readonly List<Keys> movementKeys = new List<Keys>() { Keys.W, Keys.A, Keys.S, Keys.D};
+
+        public enum AnimationState
+        {
+            Idle,
+            WalkingForward,
+            WalkingBackward,
+            WalkingRight,
+            WalkingLeft
+        }
+
+        private AnimationState currentAnimationState;
+
+        private PlayerBehaviourComponent()
+        {
+
+        }
 
 		public PlayerBehaviourComponent(GameScene scene){
             this.scene = scene;
@@ -42,34 +75,87 @@ namespace Components {
             float oldX = transform.X;
             float oldY = transform.Y;
 
+            AnimationState newAnimationState = currentAnimationState;
+
             if(keyboardState.IsKeyPressed(Keys.W))
             {
-                transform.Y -= stats.speed * gameTime.Milliseconds;
+                newAnimationState = AnimationState.WalkingBackward;
+
+                transform.Y -= stats.speed * (gameTime.Milliseconds * SPEED_MODIFIER);
                 if (!scene.isFree(collider))
                     transform.Y = oldY;
             }
 
             if (keyboardState.IsKeyPressed(Keys.A))
             {
-                transform.X -= stats.speed * gameTime.Milliseconds;
+                newAnimationState = AnimationState.WalkingLeft;
+
+                transform.X -= stats.speed * (gameTime.Milliseconds * SPEED_MODIFIER);
                 if (!scene.isFree(collider))
                     transform.X = oldX;
             }
 
             if (keyboardState.IsKeyPressed(Keys.S))
             {
-                transform.Y += stats.speed * gameTime.Milliseconds;
+                newAnimationState = AnimationState.WalkingForward;
+                transform.Y += stats.speed * (gameTime.Milliseconds * SPEED_MODIFIER);
                 if (!scene.isFree(collider))
                     transform.Y = oldY;
             }
 
             if (keyboardState.IsKeyPressed(Keys.D))
             {
-                transform.X += stats.speed * gameTime.Milliseconds;
+                newAnimationState = AnimationState.WalkingRight;
+                transform.X += stats.speed * (gameTime.Milliseconds * SPEED_MODIFIER);
                 if (!scene.isFree(collider))
                     transform.X = oldX;
             }
+
+            if(keyboardState.nonePressed(movementKeys))
+            {
+                newAnimationState = AnimationState.Idle;
+                anim2D.StopAnimation();
+            }
+
+            if (currentAnimationState != newAnimationState)
+            {
+                switch (newAnimationState)
+                {
+                    case AnimationState.Idle:
+                        //anim2D.CurrentAnimation = "Idle";
+                        break;
+                    case AnimationState.WalkingForward:
+                        anim2D.CurrentAnimation = "WalkingForward";
+                        break;
+
+                    case AnimationState.WalkingBackward:
+                        anim2D.CurrentAnimation = "WalkingBackward";
+                        break;
+
+                    case AnimationState.WalkingLeft:
+                        anim2D.CurrentAnimation = "WalkingSideway";
+                        transform.Effect = WaveEngine.Common.Graphics.SpriteEffects.FlipHorizontally;
+                        break;
+
+                    case AnimationState.WalkingRight:
+                        anim2D.CurrentAnimation = "WalkingSideway";
+                        transform.Effect = WaveEngine.Common.Graphics.SpriteEffects.None;
+                        break;
+
+                    
+                }
+
+                currentAnimationState = newAnimationState;
+            }
+
         }
+
+        protected override void Initialize()
+        {
+            base.Initialize();
+            anim2D.PlayAutomatically = true;
+        }
+
     }//end PlayerBehaviourComponent
 
 }//end namespace Components

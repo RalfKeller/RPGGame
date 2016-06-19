@@ -27,7 +27,7 @@ namespace Scenes {
 		public GameSceneBehaviour gameSceneBehaviour { get; private set; }
         public List<GameObject> gameObjects { get; private set; }
         private Map map;
-        private Player player;
+        public Player player { get; set; }
 
 
 		public GameScene(){
@@ -36,15 +36,13 @@ namespace Scenes {
 
 		/// <param name="map">Die Map, die für diese Scene verwendet werden soll</param>
 		/// <param name="player">Der Player, der für diese Scene verwendet werden soll</param>
-		public GameScene(Map map, Player player){
+		public GameScene(Map map){
             this.map = map;
-            this.player = player;
 
             gameSceneBehaviour = new GameSceneBehaviour();
 
             //Noch nicht sicher, ob "PostUpdate" oder "PreUpdate" besser für uns ist
             AddSceneBehavior(gameSceneBehaviour, SceneBehavior.Order.PostUpdate);
-
             gameObjects = new List<GameObject>();
 
 		}
@@ -56,6 +54,7 @@ namespace Scenes {
 
             EntityManager.Add(map);
             EntityManager.Add(player);
+
         }
 
         public bool isFree(Collider2D collider)

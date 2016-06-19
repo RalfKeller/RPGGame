@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 19.06.2016 12:28:05
+// File generated on 19.06.2016 17:26:38
 namespace ToBeDecided
 {
     using System;
@@ -26,11 +26,59 @@ namespace ToBeDecided
             /// <summary> Path to Content/Assets/desert.tsx </summary>
             public const string desert_tsx = "Content/Assets/desert.tsx";
             
+            /// <summary> Path to Content/Assets/SpriteSheet.spritesheet </summary>
+            public const string SpriteSheet_spritesheet = "Content/Assets/SpriteSheet.spritesheet";
+            
             /// <summary> Path to Content/Assets/TitleBackground.jpg </summary>
             public const string TitleBackground_jpg = "Content/Assets/TitleBackground.jpg";
             
             /// <summary> Path to Content/Assets/tmw_desert_spacing.png </summary>
             public const string tmw_desert_spacing_png = "Content/Assets/tmw_desert_spacing.png";
+            
+            /// <summary> Texture names from spritesheet Content/Assets/SpriteSheet.spritesheet </summary>
+            public struct SpriteSheet_spritesheet_TextureName
+            {
+                
+                public const string link_spritesheet_77 = "link spritesheet_77";
+                
+                public const string link_spritesheet_78 = "link spritesheet_78";
+                
+                public const string link_spritesheet_79 = "link spritesheet_79";
+                
+                public const string link_spritesheet_80 = "link spritesheet_80";
+                
+                public const string link_spritesheet_81 = "link spritesheet_81";
+                
+                public const string link_spritesheet_82 = "link spritesheet_82";
+                
+                public const string link_spritesheet_83 = "link spritesheet_83";
+                
+                public const string link_spritesheet_84 = "link spritesheet_84";
+                
+                public const string link_spritesheet_85 = "link spritesheet_85";
+                
+                public const string link_spritesheet_86 = "link spritesheet_86";
+                
+                public const string link_spritesheet_87 = "link spritesheet_87";
+                
+                public const string link_spritesheet_88 = "link spritesheet_88";
+                
+                public const string link_spritesheet_89 = "link spritesheet_89";
+                
+                public const string link_spritesheet_90 = "link spritesheet_90";
+                
+                public const string link_spritesheet_91 = "link spritesheet_91";
+                
+                public const string link_spritesheet_92 = "link spritesheet_92";
+                
+                public const string link_spritesheet_93 = "link spritesheet_93";
+                
+                public const string link_spritesheet_94 = "link spritesheet_94";
+                
+                public const string link_spritesheet_95 = "link spritesheet_95";
+                
+                public const string link_spritesheet_96 = "link spritesheet_96";
+            }
         }
         
         public sealed class Scenes

@@ -24,6 +24,19 @@ namespace Components {
 
 		}
 
+        public static StatComponent PlayerLevel1 {
+            get
+            {
+                return new StatComponent()
+                {
+                    maxHealth = 100,
+                    currentHealth = 100,
+                    speed = 1,
+                    strength = 1
+                };
+            }
+        }
+
 	}//end StatComponent
 
 }//end namespace Components

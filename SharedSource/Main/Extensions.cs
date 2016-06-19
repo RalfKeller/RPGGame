@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using WaveEngine.Common.Input;
 
 namespace ToBeDecided
 {
@@ -15,6 +16,19 @@ namespace ToBeDecided
                 throw new KeyNotFoundException();
             else
                 return tempValue;
+        }
+
+        public static bool nonePressed(this KeyboardState state, List<Keys> keys)
+        {
+            foreach (Keys key in keys)
+            {
+                if (state.IsKeyPressed(key))
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
     }
 }

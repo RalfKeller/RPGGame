@@ -18,6 +18,7 @@ namespace ToBeDecided.MapClasses
         private TmxTileset tileset;
         private Sprite thisSprite;
         private bool init = false;
+
         public MapDrawer(TmxMap map)
         {
             this.tmxMap = map;
@@ -81,7 +82,7 @@ namespace ToBeDecided.MapClasses
 
                     this.layer.SpriteBatch.Draw(thisSprite.Texture, new Vector2(worldX, worldY),
                         tilesheetRectangle, Color.White, 0f, new Vector2(), Vector2.One, 
-                        SpriteEffects.None, 0f, AddressMode.LinearClamp); 
+                        SpriteEffects.None, 1f, AddressMode.LinearClamp); 
                 }
             }
         }

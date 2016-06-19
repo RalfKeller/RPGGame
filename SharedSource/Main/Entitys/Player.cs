@@ -15,6 +15,10 @@ using WaveEngine.Framework;
 using Components;
 using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Physics2D;
+using ToBeDecided;
+using WaveEngine.Components.Graphics2D;
+using WaveEngine.Components.Animation;
+using Scenes;
 
 namespace Entitys {
 	public class Player : GameObject {
@@ -22,13 +26,16 @@ namespace Entitys {
 		public PlayerBehaviourComponent playerBehaviourComponent { get; private set; }
         public StatComponent statComponent { get; private set; }
 
-		public Player(){
-            playerBehaviourComponent = new PlayerBehaviourComponent(gameScene);
+        public Player(GameScene scene) {
+            playerBehaviourComponent = new PlayerBehaviourComponent(scene);
             collider = new RectangleCollider2D();
-            statComponent = new StatComponent();
+            statComponent = StatComponent.PlayerLevel1;
 
             Entity = new Entity("Player")
-                .AddComponent(new Transform2D())
+                .AddComponent(new Transform2D() { X = 50, Y = 50, DrawOrder = 0})
+                .AddComponent(new SpriteAtlas(WaveContent.Assets.SpriteSheet_spritesheet))
+                .AddComponent(new SpriteAtlasRenderer())
+                .AddComponent(new Animation2D())
                 .AddComponent(collider)
                 .AddComponent(playerBehaviourComponent)
                 .AddComponent(statComponent);

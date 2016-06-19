@@ -28,6 +28,13 @@
         <WinfoHash>fd419a3eb47a9c0a51183599b2f2045f</WinfoHash>
       </d2p1:Value>
     </d2p1:KeyValueOfstringFileHashesH8kexHFU>
+    <d2p1:KeyValueOfstringFileHashesH8kexHFU>
+      <d2p1:Key>C:/Users/Ralf/Documents/Visual Studio 2015/Projects/RPGGame/Content/Assets/SpriteSheet.spritesheet#WaveEditor.Exporter.Exporters.SpriteSheetExporter</d2p1:Key>
+      <d2p1:Value>
+        <FileHash>7737d79f8390ee18171d207e8afb768c</FileHash>
+        <WinfoHash>b7cb263654c8374d294b4b5df5ca9f6e</WinfoHash>
+      </d2p1:Value>
+    </d2p1:KeyValueOfstringFileHashesH8kexHFU>
   </files>
   <id>BFEBFBFF000306A9</id>
 </GenerateInfo>

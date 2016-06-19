@@ -126,6 +126,9 @@ namespace MapClasses
         /// <returns>True wenn keine blockierenden Objekte an der Position sind, sonst false</returns>
         public bool requestMovement(Transform2D transform)
         {
+
+            return true;
+
             int row = (int)(transform.Y / tmxMap.TileHeight);
             int column = (int)(transform.X / tmxMap.TileWidth);
 
