@@ -19,9 +19,14 @@ using WaveEngine.Common.Math;
 using TiledSharp;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
+using ToBeDecided;
+using Entitys;
+using ToBeDecided.MapClasses;
 
-namespace MapClasses {
-	public class Map : BaseDecorator {
+namespace MapClasses
+{
+    public class Map : BaseDecorator
+    {
 
         public enum Difficulty
         {
@@ -32,13 +37,25 @@ namespace MapClasses {
 
         }
 
-		public GameScene gameScene;
+        public GameScene gameScene;
         private TmxMap tmxMap;
 
         private Dictionary<int, List<Spawner>> difficultyToSpawnerList;
 
-		public Map(TmxMap tmxMap) {
+        private Map()
+        {
+
+        }
+
+        public Map(TmxMap tmxMap)
+        {
             this.tmxMap = tmxMap;
+
+            this.Entity = new Entity().AddComponent(new MapDrawer(tmxMap));
+
+            #region Spawner laden
+
+            difficultyToSpawnerList = new Dictionary<int, List<Spawner>>();
 
             difficultyToSpawnerList.Add(0, new List<Spawner>());
             difficultyToSpawnerList.Add(1, new List<Spawner>());
@@ -46,44 +63,81 @@ namespace MapClasses {
 
             foreach (TmxObjectGroup objectGroup in tmxMap.ObjectGroups)
             {
-                if(objectGroup.Name == "Spawner")
+                if (objectGroup.Name == "Spawner")
                 {
+                    List<Spawner> easySpawners      = difficultyToSpawnerList.forceGetValue((int)Difficulty.Leicht);
+                    List<Spawner> mediumSpawners    = difficultyToSpawnerList.forceGetValue((int)Difficulty.Mittel);
+                    List<Spawner> hardSpawners      = difficultyToSpawnerList.forceGetValue((int)Difficulty.Schwer);
+
                     foreach (TmxObject tmxObject in objectGroup.Objects)
                     {
+                        Spawner spawner = new Spawner();
+
+
                         bool inEasy;
                         bool inMedium;
                         bool inHard;
 
-                        string inEasyString = "false";
-                        string inMediumString = "false";
-                        string inHardString = "false";
+                        string inEasyString     = "false";
+                        string inMediumString   = "false";
+                        string inHardString     = "false";
+                        string enemyType        = "";
+                        string enemyCount       = "";
+                        string enemyLevel       = "";
 
                         tmxObject.Properties.TryGetValue("inEasy", out inEasyString);
                         tmxObject.Properties.TryGetValue("inMedium", out inMediumString);
                         tmxObject.Properties.TryGetValue("inHard", out inHardString);
+                        tmxObject.Properties.TryGetValue("enemyType", out enemyType);
+                        tmxObject.Properties.TryGetValue("enemyCount", out enemyCount);
+                        tmxObject.Properties.TryGetValue("enemyLevel", out enemyLevel);
 
                         inEasy      = Convert.ToBoolean(inEasyString);
                         inMedium    = Convert.ToBoolean(inMediumString);
                         inHard      = Convert.ToBoolean(inHardString);
 
-                       
+                        spawner.setType(EnemyBuilder.getEnemyClassByName(enemyType));
+                        spawner.setLevel(Convert.ToInt32(enemyLevel));
+                        spawner.setCount(Convert.ToInt32(enemyCount));
+
+                        if (inEasy)
+                            easySpawners.Add(spawner);
+                        if (inMedium)
+                            mediumSpawners.Add(spawner);
+                        if (inHard)
+                            hardSpawners.Add(spawner);
                     }
                 }
             }
-		}
 
-		/// <param name="schwierigkeit">schwierigkeit</param>
-		public List<Spawner> getSpawner(int schwierigkeit){
-            return null;
-		}
+            #endregion
 
-		/// 
-		/// <param name="rectangle">rectangle</param>
-		public bool requestMovement(Transform2D transform){
+        }
 
-			return false;
-		}
+        /// <summary>Gibt eine Liste mit Spawner zurückt, die für die angegebene Schwierigkeit erstellt wurden</summary>
+        /// <param name="schwierigkeit">Die Schwierigkeit, für die die Spawner gebraucht werden</param>
+        public List<Spawner> getSpawner(Difficulty difficulty)
+        {
+            return difficultyToSpawnerList.forceGetValue((int)difficulty);
+        }
 
-	}//end Map
+        /// <summary>Checkt, ob die angegebene Position frei ist</summary>
+        /// <param name="transform">Die Position, die überprüft werden soll</param>
+        /// <returns>True wenn keine blockierenden Objekte an der Position sind, sonst false</returns>
+        public bool requestMovement(Transform2D transform)
+        {
+            int row = (int)(transform.Y / tmxMap.TileHeight);
+            int column = (int)(transform.X / tmxMap.TileWidth);
+
+            foreach (TmxLayerTile tile in tmxMap.Layers["Obstacles"].Tiles)
+            {
+                if (tile.Y == row && tile.X == column)
+                    return false;
+            }
+
+            return true;
+        }
+
+    }//end Map
 
 }//end namespace Map

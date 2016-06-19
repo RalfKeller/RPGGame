@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ToBeDecided
 {
-    static class Extensions
+    public static class Extensions
     {
         public static V forceGetValue<V, K>(this Dictionary<K, V> dict, K key)
         {

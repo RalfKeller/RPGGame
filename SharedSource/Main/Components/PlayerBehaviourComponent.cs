@@ -24,12 +24,13 @@ namespace Components {
         StatComponent stats;
 
         [RequiredComponent]
-        Collider2D collider;
+        RectangleCollider2D collider;
 
         [RequiredComponent]
         Transform2D transform;
 
         private GameScene scene;
+
 		public PlayerBehaviourComponent(GameScene scene){
             this.scene = scene;
 		}

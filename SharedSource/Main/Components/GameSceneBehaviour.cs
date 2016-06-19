@@ -37,7 +37,7 @@ namespace Components {
 
         protected override void Update(TimeSpan gameTime)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
     }//end GameSceneBehaviour
 

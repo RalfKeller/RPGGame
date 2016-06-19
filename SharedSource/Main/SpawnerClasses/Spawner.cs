@@ -16,37 +16,47 @@ using MapClasses;
 namespace SpawnerClasses {
 	public class Spawner  {
 
-		IEnemy getType()
+		public IEnemy getType()
         {
             return null;
         }
 
-		bool isTypeOf<E>()
+		public bool isTypeOf<E>()
         {
             return false;
         }
 
-		/// 
-		/// <param name="anzahl"></param>
-		/// <param name="level"></param>
-		void setBase<E>(int anzahl, int level)
+        /// 
+        /// <param name="anzahl"></param>
+        /// <param name="level"></param>
+        public void setBase<E>(int anzahl, int level)
         {
             
         }
 
-		/// 
-		/// <param name="map"></param>
-		void setMap(Map map)
+        /// 
+        /// <param name="map"></param>
+        public void setMap(Map map)
         {
 
         }
 
-		void setType<E>()
+        public void setCount(int count)
         {
 
         }
 
-		void spawn()
+        public void setLevel(int level)
+        {
+
+        }
+
+        public void setType(Type t)
+        {
+
+        }
+
+        public void spawn()
         {
 
         }

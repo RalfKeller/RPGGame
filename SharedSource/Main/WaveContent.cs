@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 17.06.2016 15:53:03
+// File generated on 19.06.2016 12:28:05
 namespace ToBeDecided
 {
     using System;
@@ -20,8 +20,17 @@ namespace ToBeDecided
         public sealed class Assets
         {
             
+            /// <summary> Path to Content/Assets/desert.tmx </summary>
+            public const string desert_tmx = "Content/Assets/desert.tmx";
+            
+            /// <summary> Path to Content/Assets/desert.tsx </summary>
+            public const string desert_tsx = "Content/Assets/desert.tsx";
+            
             /// <summary> Path to Content/Assets/TitleBackground.jpg </summary>
             public const string TitleBackground_jpg = "Content/Assets/TitleBackground.jpg";
+            
+            /// <summary> Path to Content/Assets/tmw_desert_spacing.png </summary>
+            public const string tmw_desert_spacing_png = "Content/Assets/tmw_desert_spacing.png";
         }
         
         public sealed class Scenes

@@ -20,6 +20,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Components\StatComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Components\Weapon.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Components\WeaponBehaviour.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EnemyBuilder.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entitys\Enemy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entitys\Gameobject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entitys\IEnemy.cs" />
@@ -30,6 +31,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)GameHandler.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MapChangeTrigger.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MapClasses\Map.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MapClasses\MapDrawer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MapClasses\MapLoader.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MyScene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\GameScene.cs" />

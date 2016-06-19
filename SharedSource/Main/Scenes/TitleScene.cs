@@ -19,6 +19,7 @@ using ToBeDecided;
 using WaveEngine.Components.Cameras;
 using WaveEngine.Framework.Services;
 using WaveEngine.Components.Transitions;
+using MapClasses;
 
 namespace Scenes {
 	public class TitleScene : Scene {
@@ -73,7 +74,7 @@ namespace Scenes {
 
         private void onNewGameButtonClick(object sender, EventArgs e)
         {
-            GameScene gc = new GameScene();
+            GameScene gc = new GameScene(MapLoader.getInstance().load(WaveContent.Assets.desert_tmx), new Entitys.Player());
             ScreenContext screenContext = new ScreenContext(gc);
             WaveServices.ScreenContextManager.To(screenContext, new CurtainsTransition(new TimeSpan(0,0,5)));
         }

@@ -27,10 +27,10 @@ namespace Entitys {
             collider = new RectangleCollider2D();
             statComponent = new StatComponent();
 
-            thisEntity = new Entity("Player")
+            Entity = new Entity("Player")
                 .AddComponent(new Transform2D())
-                .AddComponent(playerBehaviourComponent)
                 .AddComponent(collider)
+                .AddComponent(playerBehaviourComponent)
                 .AddComponent(statComponent);
 		}
 

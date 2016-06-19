@@ -27,6 +27,7 @@ namespace Scenes {
 		public GameSceneBehaviour gameSceneBehaviour { get; private set; }
         public List<GameObject> gameObjects { get; private set; }
         private Map map;
+        private Player player;
 
 
 		public GameScene(){
@@ -37,6 +38,7 @@ namespace Scenes {
 		/// <param name="player">Der Player, der für diese Scene verwendet werden soll</param>
 		public GameScene(Map map, Player player){
             this.map = map;
+            this.player = player;
 
             gameSceneBehaviour = new GameSceneBehaviour();
 
@@ -45,14 +47,15 @@ namespace Scenes {
 
             gameObjects = new List<GameObject>();
 
-            EntityManager.Add(map);
-            EntityManager.Add(player);
 		}
 
         protected override void CreateScene()
         {
             //throw new NotImplementedException();
             EntityManager.Add(new FixedCamera2D("Camera"));
+
+            EntityManager.Add(map);
+            EntityManager.Add(player);
         }
 
         public bool isFree(Collider2D collider)
