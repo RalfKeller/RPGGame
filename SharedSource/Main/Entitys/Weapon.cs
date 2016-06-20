@@ -10,11 +10,17 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
-
-
+using WaveEngine.Framework;
+using ToBeDecided.Components;
+using WaveEngine.Framework.Graphics;
+using WaveEngine.Framework.Physics2D;
 
 namespace Components {
-	public interface Weapon  {
+	public abstract class Weapon : BaseDecorator {
+
+        public Transform2D transform { get; protected set; }
+        public Collider2D collider { get; protected set; }
+        public WeaponStatComponent stats { get; protected set; }
 
 	}//end Weapon
 

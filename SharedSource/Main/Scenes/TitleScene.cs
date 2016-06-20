@@ -6,24 +6,20 @@
 //  Original author: Ralf
 ///////////////////////////////////////////////////////////
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.IO;
-using WaveEngine.Framework;
-using WaveEngine.Components.UI;
-using WaveEngine.Common.Graphics;
-using WaveEngine.Framework.Graphics;
-using WaveEngine.Components.Graphics2D;
-using ToBeDecided;
-using WaveEngine.Components.Cameras;
-using WaveEngine.Framework.Services;
-using WaveEngine.Components.Transitions;
-using MapClasses;
 using Entitys;
+using System;
+using ToBeDecided;
+using ToBeDecided.MapClasses;
+using ToBeDecided.Scenes;
+using WaveEngine.Components.Cameras;
+using WaveEngine.Components.Transitions;
+using WaveEngine.Components.UI;
+using WaveEngine.Framework;
+using WaveEngine.Framework.Services;
 
-namespace Scenes {
-	public class TitleScene : Scene {
+namespace Scenes
+{
+    public class TitleScene : Scene {
 
         private const int BUTTON_ABSTAND = 100;
 

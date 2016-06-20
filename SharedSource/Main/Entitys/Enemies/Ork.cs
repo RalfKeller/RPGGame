@@ -6,15 +6,7 @@
 //  Original author: Ralf Keller
 ///////////////////////////////////////////////////////////
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.IO;
-
-
-
-using Entitys;
-namespace Entitys {
+namespace ToBeDecided.Entitys.Enemies {
 	public class Ork : Enemy {
 
 		public Ork(){

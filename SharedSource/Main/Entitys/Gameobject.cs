@@ -6,21 +6,20 @@
 //  Original author: Ralf Keller
 ///////////////////////////////////////////////////////////
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.IO;
+using Components;
+using ToBeDecided.Components;
+using ToBeDecided.Scenes;
 using WaveEngine.Framework;
-using Scenes;
-using WaveEngine.Framework.Physics2D;
 using WaveEngine.Framework.Graphics;
+using WaveEngine.Framework.Physics2D;
 
-namespace Entitys {
-	public class GameObject : BaseDecorator {
+namespace ToBeDecided.Entitys
+{
+    public class GameObject : BaseDecorator {
 
 		protected GameScene gameScene;
-        protected Entity thisEntity;
 
+        public StatComponent stats { get; protected set; }
         public Collider2D collider { get; protected set; }
         public Transform2D transform { get; protected set; }
 
@@ -43,5 +42,10 @@ namespace Entitys {
 		public void recieveDamange(float damage){
 
 		}
+
+        protected void attack(Weapon weapon)
+        {
+            
+        }
 	}
 }

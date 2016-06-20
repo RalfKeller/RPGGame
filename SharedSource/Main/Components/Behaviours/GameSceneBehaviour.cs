@@ -6,16 +6,16 @@
 //  Original author: Ralf Keller
 ///////////////////////////////////////////////////////////
 
+using Entitys;
 using System;
 using System.Collections.Generic;
-using System.Text;
-using System.IO;
+using ToBeDecided.Entitys;
+using ToBeDecided.MapClasses;
 using WaveEngine.Framework;
-using Entitys;
-using MapClasses;
 
-namespace Components {
-	public class GameSceneBehaviour : SceneBehavior {
+namespace ToBeDecided.Components.Behaviours
+{
+    public class GameSceneBehaviour : SceneBehavior {
 
         private Player player;
         private List<GameObject> gameObjects;

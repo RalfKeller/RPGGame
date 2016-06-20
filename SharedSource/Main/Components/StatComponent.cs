@@ -6,13 +6,9 @@
 //  Original author: Ralf
 ///////////////////////////////////////////////////////////
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.IO;
 using WaveEngine.Framework;
 
-namespace Components {
+namespace ToBeDecided.Components {
 	public class StatComponent : Component {
 
 		public int currentHealth { get; private set; }

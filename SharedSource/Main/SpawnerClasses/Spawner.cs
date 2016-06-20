@@ -7,16 +7,14 @@
 ///////////////////////////////////////////////////////////
 
 using System;
-using System.Collections.Generic;
-using System.Text;
-using System.IO;
-using Entitys;
-using MapClasses;
+using ToBeDecided.Entitys;
+using ToBeDecided.MapClasses;
 
-namespace SpawnerClasses {
-	public class Spawner  {
+namespace ToBeDecided.SpawnerClasses
+{
+    public class Spawner  {
 
-		public IEnemy getType()
+		public Enemy getType()
         {
             return null;
         }

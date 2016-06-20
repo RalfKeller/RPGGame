@@ -8,22 +8,13 @@
 
 using System;
 using System.Collections.Generic;
-using System.Text;
-using System.IO;
-
-
-
-using Scenes;
-using SpawnerClasses;
-using WaveEngine.Common.Math;
 using TiledSharp;
+using ToBeDecided.Scenes;
+using ToBeDecided.SpawnerClasses;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
-using ToBeDecided;
-using Entitys;
-using ToBeDecided.MapClasses;
 
-namespace MapClasses
+namespace ToBeDecided.MapClasses
 {
     public class Map : BaseDecorator
     {

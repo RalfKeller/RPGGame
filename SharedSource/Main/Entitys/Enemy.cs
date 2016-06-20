@@ -6,24 +6,19 @@
 //  Original author: Ralf
 ///////////////////////////////////////////////////////////
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.IO;
 
-
-
-using Components;
+using ToBeDecided.Components;
 using WaveEngine.Framework;
-using Entitys;
-namespace Entitys {
-	public abstract class Enemy : GameObject, IEnemy {
+
+namespace ToBeDecided.Entitys
+{
+    public abstract class Enemy : GameObject {
 
         private StatComponent statComponent;
 
 		public Enemy(){
-            thisEntity = new Entity();
-            thisEntity.AddComponent(statComponent);
+            Entity = new Entity();
+            Entity.AddComponent(statComponent);
 		}
 
 		public Enemy(StatComponent statComponent){

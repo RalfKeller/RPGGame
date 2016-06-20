@@ -6,31 +6,28 @@
 //  Original author: Ralf Keller
 ///////////////////////////////////////////////////////////
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.IO;
+using ToBeDecided;
+using ToBeDecided.Components;
+using ToBeDecided.Components.Behaviours;
+using ToBeDecided.Entitys;
+using ToBeDecided.Scenes;
+using WaveEngine.Components.Animation;
+using WaveEngine.Components.Graphics2D;
 using WaveEngine.Framework;
-
-using Components;
 using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Physics2D;
-using ToBeDecided;
-using WaveEngine.Components.Graphics2D;
-using WaveEngine.Components.Animation;
-using Scenes;
 
-namespace Entitys {
-	public class Player : GameObject {
+namespace Entitys
+{
+    public class Player : GameObject {
 
 		public PlayerBehaviourComponent playerBehaviourComponent { get; private set; }
-        public StatComponent statComponent { get; private set; }
 
         public Player(GameScene scene) {
             playerBehaviourComponent = new PlayerBehaviourComponent(scene);
-            collider = new RectangleCollider2D();
-            statComponent = StatComponent.PlayerLevel1;
-            transform = new Transform2D() { X = 50, Y = 50, DrawOrder = 0 };
+            this.collider = new RectangleCollider2D();
+            this.stats = StatComponent.PlayerLevel1;
+            this.transform = new Transform2D() { X = 50, Y = 50, DrawOrder = 0 };
 
             Entity = new Entity("Player")
                 .AddComponent(transform)
@@ -39,7 +36,7 @@ namespace Entitys {
                 .AddComponent(new Animation2D())
                 .AddComponent(collider)
                 .AddComponent(playerBehaviourComponent)
-                .AddComponent(statComponent);
+                .AddComponent(stats);
 		}
 
 	}//end Player

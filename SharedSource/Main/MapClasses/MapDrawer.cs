@@ -1,8 +1,4 @@
-﻿using MapClasses;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
+﻿using System;
 using TiledSharp;
 using WaveEngine.Common.Graphics;
 using WaveEngine.Common.Math;

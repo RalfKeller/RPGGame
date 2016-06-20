@@ -1,10 +1,10 @@
-﻿using Entitys;
-using System;
+﻿using System;
 using System.Drawing;
+using ToBeDecided.Entitys;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
 
-namespace ToBeDecided
+namespace ToBeDecided.Components.Behaviours
 {
     class CameraTrackBehaviour : Behavior
     {

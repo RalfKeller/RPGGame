@@ -10,10 +10,19 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
+using WaveEngine.Framework;
+using ToBeDecided.Components;
+using WaveEngine.Framework.Graphics;
 
 namespace Components {
-	public interface WeaponBehaviour {
+	public abstract class WeaponBehaviour : Behavior {
 
-	}//end WeaponBehaviour
+        [RequiredComponent]
+        WeaponStatComponent stats;
+
+        [RequiredComponent]
+        Transform2D transform;
+
+    }//end WeaponBehaviour
 
 }//end namespace Components

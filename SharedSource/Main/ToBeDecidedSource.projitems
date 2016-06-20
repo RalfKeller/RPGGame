@@ -9,32 +9,28 @@
     <Import_RootNamespace>ToBeDecided</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)Actions\IAction.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Actions\MovementAction.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)CameraTrackBehaviour.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Components\EnemyBehaviour.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Components\GameComponent.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Components\GameSceneBehaviour.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Components\InputController.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Components\MenuInputController.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Components\PlayerBehaviourComponent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Components\Behaviours\CameraTrackBehaviour.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Components\Behaviours\EnemyBehaviour.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Components\Behaviours\GameSceneBehaviour.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Components\Behaviours\PlayerBehaviourComponent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Components\Behaviours\WeaponBehaviours\SwordBehaviourComponent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Components\Behaviours\WeaponBehaviours\WeaponBehaviour.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Components\StatComponent.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Components\Weapon.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Components\WeaponBehaviour.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Components\WeaponStatComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EnemyBuilder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entitys\Enemies\Ork.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entitys\Enemy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entitys\Gameobject.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Entitys\IEnemy.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Entitys\Ork.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entitys\Player.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entitys\Weapon.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entitys\Weapons\Sword.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Game.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)GameHandler.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MapChangeTrigger.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MapClasses\Map.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MapClasses\MapDrawer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MapClasses\MapLoader.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)MyScene.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Oval.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\GameScene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\TitleScene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SpawnerClasses\Spawner.cs" />

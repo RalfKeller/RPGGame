@@ -9,7 +9,7 @@
 using System;
 using TiledSharp;
 
-namespace MapClasses {
+namespace ToBeDecided.MapClasses {
 	public class MapLoader {
 
         //public Map m_Map;

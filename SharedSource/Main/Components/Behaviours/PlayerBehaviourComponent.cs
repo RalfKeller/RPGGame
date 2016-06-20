@@ -19,8 +19,9 @@ using WaveEngine.Framework.Graphics;
 using WaveEngine.Components.Graphics2D;
 using WaveEngine.Components.Animation;
 using ToBeDecided;
+using ToBeDecided.Scenes;
 
-namespace Components {
+namespace ToBeDecided.Components.Behaviours {
 	public class PlayerBehaviourComponent : Behavior {
 
         [RequiredComponent]

@@ -6,25 +6,20 @@
 //  Original author: Ralf
 ///////////////////////////////////////////////////////////
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.IO;
-
-
-
 using Components;
 using Entitys;
-using MapClasses;
-using WaveEngine.Framework;
-using WaveEngine.Framework.Graphics;
-using WaveEngine.Components.Cameras;
-using WaveEngine.Framework.Physics2D;
-using ToBeDecided;
+using System.Collections.Generic;
 using System.Drawing;
+using ToBeDecided.Components.Behaviours;
+using ToBeDecided.Entitys;
+using ToBeDecided.MapClasses;
+using WaveEngine.Components.Cameras;
+using WaveEngine.Framework;
+using WaveEngine.Framework.Physics2D;
 
-namespace Scenes {
-	public class GameScene : Scene {
+namespace ToBeDecided.Scenes
+{
+    public class GameScene : Scene {
 
 		public GameSceneBehaviour gameSceneBehaviour { get; private set; }
         public List<GameObject> gameObjects { get; private set; }
@@ -72,6 +67,16 @@ namespace Scenes {
             }
 
             return true;
+        }
+
+        public void addGameObject()
+        {
+
+        }
+
+        public void addWeapon(Weapon weapon)
+        {
+
         }
 
     }//end GameScene
